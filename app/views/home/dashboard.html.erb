@@ -1,0 +1,13 @@
+<h1>Bienvenido al Dashboard</h1>
+<!-- Aquí puedes agregar más contenido -->
+<p>Esta es la página principal del dashboard.</p>
+
+<% if user_signed_in? %>
+  <p>Hola, <%= current_user.email %>!</p>
+  <%= form_with(url: destroy_user_session_path, method: :delete, style: 'display: inline;') do %>
+    <%= submit_tag 'Cerrar sesión', class: 'button' %>
+  <% end %>
+<% else %>
+  <%= link_to 'Iniciar sesión', new_user_session_path %> | 
+  <%= link_to 'Registrarse', new_user_registration_path %>
+<% end %>
