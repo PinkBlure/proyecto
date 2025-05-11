@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  # Other routes...
+  resources :recipes
 
-  # Define a route for HomeController's index action
   get "home/index", to: "home#index", as: :home_index
   get "dashboard", to: "home#dashboard", as: "dashboard"
 

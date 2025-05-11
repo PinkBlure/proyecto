@@ -1,0 +1,10 @@
+%h1 Bienvenido al Dashboard
+%p Esta es la página principal del dashboard.
+
+%p Hola, #{current_user.email} 
+
+%p
+  = link_to 'Mis recetas', recipes_path, class: 'button'
+
+= form_with(url: destroy_user_session_path, method: :delete, style: 'display: inline;') do
+  = submit_tag 'Cerrar sesión', class: 'button'

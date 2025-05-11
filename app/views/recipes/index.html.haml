@@ -1,0 +1,8 @@
+%h1 Mis Recetas
+
+- if @recipes.any?
+  %ul
+    - @recipes.each do |recipe|
+      %li= recipe.name
+- else
+  %p No tienes recetas aún.
